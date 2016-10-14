@@ -34,4 +34,19 @@ router.route('/facebook')
 		scope: ['email']
 }));
 
+router.post('/login', 
+	passport.authenticate('local', {
+		failureRedirect: '/login'
+	}),
+	function (req, res) {
+		res.redirect('/users');
+	}
+);
+
+// router.route('/local')
+// 	.get(passport.authenticate('local', {
+// 		successRedirect: '/users',
+// 		failureRedirect: '/error'
+// }));
+
 module.exports = router;
