@@ -9,8 +9,9 @@ var express         = require('express'),
     exphbs          = require('express-handlebars');
 
 var index   = require('./routes/index'),
-    users   = require('./routes/users'),
-    auth    = require('./routes/auth');
+    // signup  = require('./routes/signup'),
+    auth    = require('./routes/auth'),
+    users   = require('./routes/users');
 
 var app = express();
 
