@@ -1,6 +1,6 @@
 var express 	= require('express'),
-		passport	= require('passport'),
-		router 		= express.Router();
+	passport	= require('passport'),
+	router 		= express.Router();
 
 router.route('/google/callback')
 	.get(passport.authenticate('google', {
@@ -11,7 +11,7 @@ router.route('/google/callback')
 router.route('/google')
 	.get(passport.authenticate('google', {
 		scope: ['https://www.googleapis.com/auth/userinfo.profile',
-						'https://www.googleapis.com/auth/userinfo.email']
+				'https://www.googleapis.com/auth/userinfo.email']
 }));
 
 router.route('/twitter/callback')
@@ -36,7 +36,7 @@ router.route('/facebook')
 
 router.post('/login', 
 	passport.authenticate('local', {
-		failureRedirect: '/login'
+		failureRedirect: '/'
 	}),
 	function (req, res) {
 		res.redirect('/users');

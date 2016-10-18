@@ -8,7 +8,7 @@ var express         = require('express'),
     session         = require('express-session'),
     exphbs          = require('express-handlebars');
 
-var index  = require('./routes/index'),
+var index   = require('./routes/index'),
     users   = require('./routes/users'),
     auth    = require('./routes/auth');
 
@@ -32,7 +32,7 @@ app.use(session({
   saveUninitialized: false
 }));
 
-require('./config/passport')(app);
+require('./auth/passport')(app);
 
 app.use('/', index);
 app.use('/users', users);

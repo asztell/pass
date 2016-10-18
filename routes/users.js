@@ -10,6 +10,7 @@ router.use('/', function (req, res, next) {
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
+  console.log(req.user);
   res.render('users', 
   					{
   						user: {
